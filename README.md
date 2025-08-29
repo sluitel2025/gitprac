@@ -1,3 +1,0 @@
-# Name List
-
--   Damon L

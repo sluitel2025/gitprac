@@ -23,7 +23,13 @@ class Car(Vehicle):
         return f"{self.brand} car can go {self.speed} mph, has {self.doors} doors, a {self.fuel} tank, and has a {self.engine} engine"
     
     class Bike(Vehicle):
-        def __init__(self, brand, speed, fuel, bike_type, has_gears):
-            super().__init__(brand, speed, fuel)
+        def __init__(self, brand, speed, bike_type, has_gears):
+            super().__init__(brand, speed)
             self.bike_type = bike_type
             self.has_gears = has_gears
+    
+    def move(self):
+        return f"{self.brand} bike {self.bike_type} is pedaling at {self.speed} mph with/without gears"
+    
+    def __str__(self):
+        return f"{self.brand} {self.bike_type} bike can go {self.speed} and has {self.has_gears}"

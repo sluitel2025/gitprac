@@ -39,3 +39,13 @@ def compute_bin_frequencies(values, cutoffs):
                 if cutoffs[i] <= value < cutoffs[i + 1]:
                     freqs[i] += 1  # add one to this bin defined by [cutoffs[i], cutoffs[i+1])
     return freqs
+
+def group_by(table, header, group_by_col_name):
+    dict = {}
+    col_index = header.index(group_by_col_name)
+    for row in table:
+        key = row[col_index]
+        if key not in dict:
+            dict[key] = []
+        dict[key].append(row)
+    return dict

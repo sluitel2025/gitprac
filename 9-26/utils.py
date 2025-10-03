@@ -49,3 +49,13 @@ def group_by(table, header, group_by_col_name):
             dict[key] = []
         dict[key].append(row)
     return dict
+
+def compute_slope_intercept(x, y):
+    meanx = sum(x)/len(x)
+    meany = sum(y)/len(y)
+
+    num = sum([x[i] - meanx * (y[i] - meany) for i in range(len(x))])
+    den = sum(x[i] - meanx ** 2 for i in range(len(x)))
+    m = num/den
+    b = meany - m * meanx
+    return m, b

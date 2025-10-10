@@ -50,8 +50,8 @@ def test_fit_all_x_same_raises():
     X = [[3], [3], [3],[3]]
     y = [2, 4, 6,8]
     #TODO if all X values are the same raises a ValueError.
-    pass
-    
+    if np.all(x == X[0] for x in X):
+        raise ValueError("all x are the same")
 
   
 # test for test_mysimplelinearregressor_predict()
